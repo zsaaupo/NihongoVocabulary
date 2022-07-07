@@ -1,0 +1,9 @@
+{% extends "base.html"%}
+{% block title%} English {% endblock %}
+{% block body %}
+<div>
+    {% for value in i %}
+    <h2>{{ value.nihongo }} : <a href="/{{value.id}}">English</a></h2>
+    {% endfor %}
+</div>
+{% endblock %}
