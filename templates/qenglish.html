@@ -1,0 +1,9 @@
+{% extends "base.html"%}
+{% block title%} English {% endblock %}
+{% block body %}
+<div style="text-align: justify; text-align-last: center;">
+    {% for value in i %}
+    <h2><input style="margin-right: 15px;" type="checkbox">{{ value.english }} : <a target="_blank" href="http://127.0.0.1:8000/question/{{value.id}}"><button><h2>Nihongo</h2></button></a></h2>
+    {% endfor %}
+</div>
+{% endblock %}

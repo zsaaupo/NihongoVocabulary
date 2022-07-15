@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import QData, SheetCount, KanjiData
+from .models import QData, SheetCount, KanjiData, Question
 
 
 class QDataAdmin(admin.ModelAdmin):
@@ -31,6 +31,31 @@ class KanjiDataAdmin(admin.ModelAdmin):
 
 admin.site.register(KanjiData, KanjiDataAdmin)
 
+
+class QuestionAdmin(admin.ModelAdmin):
+
+    fields = [
+        "english",
+        "nihongo"
+    ]
+    list_display = [
+        "english",
+        "nihongo"
+    ]
+
+
+admin.site.register(Question, QuestionAdmin)
+
+
+class QDataAdmin(admin.ModelAdmin):
+    fields = [
+        "english",
+        "nihongo"
+    ]
+    list_display = [
+        "english",
+        "nihongo"
+    ]
 
 # count for listing
 class SheetCountAdmin(admin.ModelAdmin):

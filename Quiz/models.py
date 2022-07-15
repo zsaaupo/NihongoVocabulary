@@ -8,6 +8,7 @@ class QData(models.Model):
     def __str__(self):
         return self.english
 
+
 class KanjiData(models.Model):
 
     eigo = models.ForeignKey(QData, on_delete=models.PROTECT, related_name="Nihongo")
@@ -15,6 +16,15 @@ class KanjiData(models.Model):
 
     def __str__(self):
         return self.kanji
+
+
+class Question(models.Model):
+
+    english = models.CharField(max_length=10000)
+    nihongo = models.CharField(max_length=10000)
+
+    def __str__(self):
+        return self.english
 
 
 class SheetCount(models.Model):
