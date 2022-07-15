@@ -1,5 +1,7 @@
 from django.db import models
 
+
+# Vocabulary model
 class QData(models.Model):
 
     english = models.CharField(max_length=100)
@@ -9,6 +11,7 @@ class QData(models.Model):
         return self.english
 
 
+# Kanji model
 class KanjiData(models.Model):
 
     eigo = models.ForeignKey(QData, on_delete=models.PROTECT, related_name="Nihongo")
@@ -18,15 +21,22 @@ class KanjiData(models.Model):
         return self.kanji
 
 
+
+# Question model
 class Question(models.Model):
 
     english = models.CharField(max_length=10000)
     nihongo = models.CharField(max_length=10000)
+    e_positive = models.CharField(max_length=10000)
+    n_positive = models.CharField(max_length=10000)
+    e_negative = models.CharField(max_length=10000)
+    n_negative = models.CharField(max_length=10000)
 
     def __str__(self):
         return self.english
 
 
+# sheet count model
 class SheetCount(models.Model):
 
     start = models.CharField(max_length=10000)

@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import QData, SheetCount, KanjiData, Question
 
 
+# Vocabulary admin
 class QDataAdmin(admin.ModelAdmin):
     fields = [
         "english",
@@ -16,6 +17,7 @@ class QDataAdmin(admin.ModelAdmin):
 admin.site.register(QData, QDataAdmin)
 
 
+# Kanji admin
 class KanjiDataAdmin(admin.ModelAdmin):
 
     fields = [
@@ -32,11 +34,16 @@ class KanjiDataAdmin(admin.ModelAdmin):
 admin.site.register(KanjiData, KanjiDataAdmin)
 
 
+# Question admin
 class QuestionAdmin(admin.ModelAdmin):
 
     fields = [
         "english",
-        "nihongo"
+        "nihongo",
+        "e_positive",
+        "n_positive",
+        "e_negative",
+        "n_negative"
     ]
     list_display = [
         "english",
@@ -46,16 +53,6 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 
-
-class QDataAdmin(admin.ModelAdmin):
-    fields = [
-        "english",
-        "nihongo"
-    ]
-    list_display = [
-        "english",
-        "nihongo"
-    ]
 
 # count for listing
 class SheetCountAdmin(admin.ModelAdmin):
