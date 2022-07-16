@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block title%} カタカナ {% endblock %}
+{% block body %}
+<div>
+    <h1>{{ i.katakana }} : {{ i.pronunciation.pronounce }}</h1>
+</div>
+<br>
+<br>
+<br>
+<div>
+    <a href="http://127.0.0.1:8000/letter/"><button><h3>Letter Choice</h3></button></a> or <a href="http://127.0.0.1:8000/letter/hiragana"><button><h3>ひらがな</h3></button></a>
+</div>
+{% endblock %}
