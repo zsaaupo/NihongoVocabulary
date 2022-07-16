@@ -27,10 +27,10 @@ class Question(models.Model):
 
     english = models.CharField(max_length=10000)
     nihongo = models.CharField(max_length=10000)
-    e_positive = models.CharField(max_length=10000)
-    n_positive = models.CharField(max_length=10000)
-    e_negative = models.CharField(max_length=10000)
-    n_negative = models.CharField(max_length=10000)
+    e_positive = models.CharField(max_length=10000, null=True, blank=True)
+    n_positive = models.CharField(max_length=10000, null=True, blank=True)
+    e_negative = models.CharField(max_length=10000, null=True, blank=True)
+    n_negative = models.CharField(max_length=10000, null=True, blank=True)
 
     def __str__(self):
         return self.english
