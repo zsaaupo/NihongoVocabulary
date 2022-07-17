@@ -5,62 +5,62 @@ import random  # added random quarry for all
 
 # 2 choice view
 
-def choice(requset):
+def choice(request):
 
-    return render(requset, 'choice.html')
+    return render(request, 'choice.html')
 
 
-def qchoice(requset):
+def qchoice(request):
 
-    return render(requset, 'qchoice.html')
+    return render(request, 'qchoice.html')
 
 
 # Vocabulary view
 
-def equiz(requset):
+def equiz(request):
     qdata = list(QData.objects.all())
     qdatar = random.sample(qdata, len(qdata))
-    return render(requset, 'english.html', {'i': qdatar})
+    return render(request, 'english.html', {'i': qdatar})
 
 
-def nquiz(requset):
+def nquiz(request):
     qdata = list(QData.objects.all())
     qdatar = random.sample(qdata, len(qdata))
-    return render(requset, 'nihongo.html', {'i': qdatar})
+    return render(request, 'nihongo.html', {'i': qdatar})
 
 
-def quiz(requset, get_id):
+def quiz(request, get_id):
     qdate = QData.objects.filter(id=get_id).first()
-    return render(requset, 'all.html', {'i': qdate})
+    return render(request, 'all.html', {'i': qdate})
 
 
 # Kanji view
 
-def kquiz(requset):
+def kquiz(request):
     qdata = list(KanjiData.objects.all())
     qdatar = random.sample(qdata, len(qdata))
-    return render(requset, 'kanji.html', {'i': qdatar})
+    return render(request, 'kanji.html', {'i': qdatar})
 
 
-def kdata(requset, get_id):
+def kdata(request, get_id):
     qdate = KanjiData.objects.filter(id=get_id).first()
-    return render(requset, 'meaning.html', {'i': qdate})
+    return render(request, 'meaning.html', {'i': qdate})
 
 
 # Question view
 
-def equestion(requset):
+def equestion(request):
     qdata = list(Question.objects.all())
     qdatar = random.sample(qdata, len(qdata))
-    return render(requset, 'qenglish.html', {'i': qdatar})
+    return render(request, 'qenglish.html', {'i': qdatar})
 
 
-def nquestion(requset):
+def nquestion(request):
     qdata = list(Question.objects.all())
     qdatar = random.sample(qdata, len(qdata))
-    return render(requset, 'qnihongo.html', {'i': qdatar})
+    return render(request, 'qnihongo.html', {'i': qdatar})
 
 
-def question(requset, get_id):
+def question(request, get_id):
     qdate = Question.objects.filter(id=get_id).first()
-    return render(requset, 'question.html', {'i': qdate})
+    return render(request, 'question.html', {'i': qdate})
