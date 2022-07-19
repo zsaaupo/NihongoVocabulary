@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'Quiz',
     'Letter',
     'EverydayLife',
+    'Verb',
 ]
 
 MIDDLEWARE = [

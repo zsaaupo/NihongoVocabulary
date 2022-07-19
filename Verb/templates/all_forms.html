@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+{% block title%} Verb's forms {% endblock %}
+{% block body %}
+<div>
+    <h1>{{ i.english }} : {{i.basic_form}}</h1>
+    <br>
+    <h1>Present positive : {{ i.present_positive }}</h1>
+    <h1>Past positive : {{ i.past_positive }} </h1>
+    <br>
+    <h1>Present negative : {{ i.present_negative }}</h1>
+    <h1>Past negative : {{ i.past_negative }}</h1>
+    <br>
+    <h1>て from : {{ i.te_from }}</h1>
+    <br>
+    <h1>Present continuous : {{ i.present_continuous }}</h1>
+    <h1>Past continuous : {{ i.past_continuous }}</h1>
+</div>
+<br>
+<br>
+<br>
+<div>
+    <a href="http://127.0.0.1:8000/verb/"><button><h3>Form choice</h3></button></a>
+</div>
+{% endblock %}
