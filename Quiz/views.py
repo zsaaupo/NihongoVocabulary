@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import QData, KanjiData, Question
+from .models import QData, KanjiData, Question, QData2
 import random  # added random quarry for all
 
 
@@ -15,18 +15,54 @@ def qchoice(request):
     return render(request, 'qchoice.html')
 
 
+def voc_choice(request):
+
+    return render(request, 'voc_choice.html')
+
+
+def language_choice1(request):
+
+    return render(request, 'language_choice.html', {"no": "1"})
+
+
+def language_choice2(request):
+
+    return render(request, 'language_choice.html', {"no": "2"})
+
+
 # Vocabulary view
+
+def equiz2(request):
+    qdata = list(QData2.objects.all())
+    qdatar = random.sample(qdata, len(qdata))
+    page_no = "2"
+    return render(request, 'english.html', {'i': qdatar, 'page': page_no})
+
+
+def nquiz2(request):
+    qdata = list(QData2.objects.all())
+    qdatar = random.sample(qdata, len(qdata))
+    page_no = "2"
+    return render(request, 'nihongo.html', {'i': qdatar, 'page': page_no})
+
+
+def quiz2(request, get_id):
+    qdate = QData2.objects.filter(id=get_id).first()
+    return render(request, 'all.html', {'i': qdate})
+
 
 def equiz(request):
     qdata = list(QData.objects.all())
     qdatar = random.sample(qdata, len(qdata))
-    return render(request, 'english.html', {'i': qdatar})
+    page_no = "1"
+    return render(request, 'english.html', {'i': qdatar, 'page': page_no})
 
 
 def nquiz(request):
     qdata = list(QData.objects.all())
     qdatar = random.sample(qdata, len(qdata))
-    return render(request, 'nihongo.html', {'i': qdatar})
+    page_no = "1"
+    return render(request, 'nihongo.html', {'i': qdatar, 'page': page_no})
 
 
 def quiz(request, get_id):

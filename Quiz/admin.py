@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import QData, SheetCount, KanjiData, Question
+from .models import QData, SheetCount, KanjiData, Question, QData2
 
 
 # Vocabulary admin
@@ -15,6 +15,20 @@ class QDataAdmin(admin.ModelAdmin):
 
 
 admin.site.register(QData, QDataAdmin)
+
+
+class QData2Admin(admin.ModelAdmin):
+    fields = [
+        "english",
+        "nihongo"
+    ]
+    list_display = [
+        "english",
+        "nihongo"
+    ]
+
+
+admin.site.register(QData2, QData2Admin)
 
 
 # Kanji admin
