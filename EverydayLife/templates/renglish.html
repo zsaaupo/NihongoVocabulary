@@ -3,7 +3,7 @@
 {% block body %}
 <div style="text-align: justify; text-align-last: center;">
     {% for value in i %}
-    <h2><input style="margin-right: 15px;" type="checkbox">{{ value.english }} : <a target="_blank" href="/everydaylife/relative/{{value.id}}/"><button><h2>にほんご</h2></button></a></h2>
+    <h2><input style="margin-right: 15px;" type="checkbox">{{ value.english }} : <a target="_blank" href="/everydaylife/{{r}}/{{value.id}}/"><button><h2>にほんご</h2></button></a></h2>
     {% endfor %}
 </div>
 {% endblock %}
