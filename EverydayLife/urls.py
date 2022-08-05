@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import choice, rchoice, relative_english, relative_nihongo, relative, shop_english, shop, shop_nihongo, color_english, color_nihongo, color
+from .views import choice, rchoice, relative_english, relative_nihongo, relative, shop_english, shop, shop_nihongo, color_english, color_nihongo, color, time_english, time, time_nihongo
 
 urlpatterns = [
 
@@ -20,9 +20,15 @@ urlpatterns = [
     path('color/english/', color_english),
     path('color/nihongo/', color_nihongo),
 
+    # urls for color
+    path('time/', rchoice),
+    path('time/english/', time_english),
+    path('time/nihongo/', time_nihongo),
+
     # get id for relative
     path('relative/<str:get_id>/', relative),
     path('shop/<str:get_id>/', shop),
     path('color/<str:get_id>/', color),
+    path('time/<str:get_id>/', time),
 
 ]

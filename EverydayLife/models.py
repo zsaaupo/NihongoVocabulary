@@ -30,3 +30,14 @@ class Color(models.Model):
     def __str__(self):
         return self.english
 
+
+# Time model
+class Time(models.Model):
+
+    english = models.CharField(max_length=100)
+    nihongo = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.english
+
+
