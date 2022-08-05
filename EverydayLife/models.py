@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Relative model
 class Relative(models.Model):
 
@@ -18,3 +19,14 @@ class Shop(models.Model):
 
     def __str__(self):
         return self.english
+
+
+# colors model
+class Color(models.Model):
+
+    english = models.CharField(max_length=100)
+    nihongo = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.english
+

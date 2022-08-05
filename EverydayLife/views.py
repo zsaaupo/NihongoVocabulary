@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Relative, Shop
+from .models import Relative, Shop, Color
 import random
 
 
@@ -48,3 +48,21 @@ def shop_nihongo(request):
 def shop(request, get_id):
     qdate = Shop.objects.filter(id=get_id).first()
     return render(request, 'relative.html', {'i': qdate, 'r': 'shop'})
+
+
+# view for Colors
+def color_english(request):
+    qdata = list(Color.objects.all())
+    qdatar = random.sample(qdata, len(qdata))
+    return render(request, 'renglish.html', {'i': qdatar, 'r': 'color'})
+
+
+def color_nihongo(request):
+    qdata = list(Color.objects.all())
+    qdatar = random.sample(qdata, len(qdata))
+    return render(request, 'rnihongo.html', {'i': qdatar, 'r': 'color'})
+
+
+def color(request, get_id):
+    qdate = Color.objects.filter(id=get_id).first()
+    return render(request, 'relative.html', {'i': qdate, 'r': 'color'})
