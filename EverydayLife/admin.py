@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Relative, Shop, Color, Time
+from .models import Relative, Shop, Color, Time, Wh
 
 
 # relative admin
@@ -68,3 +68,20 @@ class TimeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Time, TimeAdmin)
+
+
+# Wh admin
+class WhAdmin(admin.ModelAdmin):
+
+    fields = [
+        'english',
+        'nihongo'
+    ]
+
+    list_display = [
+        'english',
+        'nihongo'
+    ]
+
+
+admin.site.register(Wh, WhAdmin)

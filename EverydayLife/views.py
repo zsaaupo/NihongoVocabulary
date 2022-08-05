@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Relative, Shop, Color, Time
+from .models import Relative, Shop, Color, Time, Wh
 import random
 
 
@@ -84,3 +84,21 @@ def time_nihongo(request):
 def time(request, get_id):
     qdate = Time.objects.filter(id=get_id).first()
     return render(request, 'relative.html', {'i': qdate, 'r': 'time'})
+
+
+# view for Wh
+def wh_english(request):
+    qdata = list(Wh.objects.all())
+    qdatar = random.sample(qdata, len(qdata))
+    return render(request, 'renglish.html', {'i': qdatar, 'r': 'wh'})
+
+
+def wh_nihongo(request):
+    qdata = list(Wh.objects.all())
+    qdatar = random.sample(qdata, len(qdata))
+    return render(request, 'rnihongo.html', {'i': qdatar, 'r': 'wh'})
+
+
+def wh(request, get_id):
+    qdate = Wh.objects.filter(id=get_id).first()
+    return render(request, 'relative.html', {'i': qdate, 'r': 'wh'})
