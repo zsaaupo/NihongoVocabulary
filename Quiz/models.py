@@ -20,6 +20,15 @@ class QData2(models.Model):
         return self.english
 
 
+class QData3(models.Model):
+
+    english = models.CharField(max_length=100)
+    nihongo = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.english
+
+
 # Kanji model
 class KanjiData(models.Model):
 
