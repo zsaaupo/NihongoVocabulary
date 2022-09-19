@@ -7,4 +7,5 @@ urlpatterns = [
     path('everydaylife/', include("EverydayLife.urls")),
     path('verb/', include("Verb.urls")),
     path('', include("Quiz.urls")),
+    path('N4/', include("N4_Voc.urls")),
 ]

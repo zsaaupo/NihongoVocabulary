@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'Letter',
     'EverydayLife',
     'Verb',
+    'N4_Voc',
 ]
 
 MIDDLEWARE = [
